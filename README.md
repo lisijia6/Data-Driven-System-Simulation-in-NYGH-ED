@@ -4,7 +4,25 @@
 
 **Supervised by:** Prof. Arik Senderovich, Prof. Opher Baron, and Prof. Dmitry Krass
 
-## Background
+
+**Table of Contents**
+
+[1.0 Background](#10-background)
+
+[2.0 Pipeline](#20-pipeline)
+
+[3.0 Other Useful Code](#30-other-useful-code)
+
+[4.0 Examples of Using the Pipeline](#40-examples-of-using-the-pipeline)
+
+[5.0 Limitations of Current Work](#50-limitations-of-current-work)
+
+[6.0 Possible Future Improvements to GitHub Code](#60-possible-future-improvements-to-github-code)
+
+[7.0 Contact](#70-contact)
+
+
+## 1.0 Background
 A queueing system can be described as a system where customers arrive for service and a queue develops when there are more customers in the system than the number of servers. All queueing systems will have an arrival process, a service and departure process, and a number of servers. Simulation, although not exact, can be used to study queueing system behaviours and serve as the “digital twin” of complex real-life systems. 
 
 This is a project in the area of healthcare that focuses on data-driven system simulation in hospital emergency department (ED). Our interest is to study the effect of congestions in the ED system, as hospital EDs can encounter challenges such as limited resource capacity and long patient sojourn time. We developed an automated pipeline consisting of three main steps:
@@ -16,7 +34,7 @@ The data used for this project is from North York General Hospital (NYGH) ED and
 
 
 
-## Pipeline
+## 2.0 Pipeline
 The automated data-drive pipeline is implemented in Python. The code for the pipeline can be found in the folder **"1_pipeline"**. The folder contains 5 Python files:
 * **nygh_main_final.py**
 * **nygh_pre_process_final.py**
@@ -56,12 +74,12 @@ In Step 0, the "nygh_main" file collects inputs for Steps 1 to 5.
 
 
 
-## Other Useful Code
+## 3.0 Other Useful Code
 In the folder **"2_other"** contains some code that are not part of the pipeline, but related to the work. 
 * **nygh\_plotting\_clustered\_bars\_final.py** can be modified to read in data and create clustered bar charts
 
 
-## Examples of Using the Pipeline
+## 4.0 Examples of Using the Pipeline
 Four examples of running the pipeline by selecting different training and testing ranges are included in the folder **"3_pipeline_examples"**. In particular, below will walk through the first example in the folder **"pipeline_example_1..."**.
 
 Inside the **"pipeline_example_1..."** folder, the file **"00_pipeline_example_1_terminal_output.txt"** is the first file to read. In the first part, it shows the answers to the question for this particular use of the pipeline. Corresponding to **Step 0**, all inputs to the pipeline are collected at the beginning. After the user enters all the inputs to the pipeline, the pipeline automatically goes through **Steps 1 to 5** in the pipeline. The second part of the terminal output shows some cues that were given to the user in the console as the pipeline is running. 
@@ -113,19 +131,19 @@ In this example, we also included an example of plotting a clustered bar chart, 
 ___ 
 
 
-## Limitations of Current Work
+## 5.0 Limitations of Current Work
 * Service process of the system is a **"black-box"** process that starts from triage to leaving ED (lacked timestamps in between)
 * Representation of congestion ("system state") is **highly simplified**, by counts of patients in the ED
 
 
-## Possible Future Improvements to GitHub Code
+## 6.0 Possible Future Improvements to GitHub Code
 1. **More generalizations on data pre-processing (current data pre-processing is specific to the raw data)**, e.g., feature selection, patient type categorization
 2. **Integration of intervention analysis results to the pipeline**, e.g., plots of system LOS reduction vs. level of intervention
 3. **Simplification of file inputs and outputs**, e.g., reduce number of intermediate results files generated in the pipeline, improve the organization of results produced during the simulation
 
 
 
-## Contact
+## 7.0 Contact
 Repository author: sijianancy.li@mail.utoronto.ca
 
 Thank You!
