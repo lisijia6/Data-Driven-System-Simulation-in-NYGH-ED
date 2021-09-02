@@ -17,7 +17,7 @@ The data used for this project is from North York General Hospital (NYGH) ED and
 
 
 ## Pipeline
-The automated data-drive pipeline is implemented in Python. The code for the pipeline can be found in the folder __1_pipeline__. The folder contains 5 Python files:
+The automated data-drive pipeline is implemented in Python. The code for the pipeline can be found in the folder **"1_pipeline"**. The folder contains 5 Python files:
 * **nygh_main_final.py**
 * **nygh_pre_process_final.py**
 * **nygh_simulation_final.py**
@@ -57,7 +57,7 @@ In Step 0, the "nygh_main" file collects inputs for Steps 1 to 5.
 
 
 ## Other Useful Code
-In the folder **2_other** contains some code that are not part of the pipeline, but related to the work. 
+In the folder **"2_other"** contains some code that are not part of the pipeline, but related to the work. 
 * **nygh\_plotting\_clustered\_bars\_final.py** can be modified to read in data and create clustered bar charts
 
 
