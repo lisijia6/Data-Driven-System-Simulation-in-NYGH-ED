@@ -61,6 +61,57 @@ In the folder **"2_other"** contains some code that are not part of the pipeline
 * **nygh\_plotting\_clustered\_bars\_final.py** can be modified to read in data and create clustered bar charts
 
 
+## Examples of Using the Pipeline
+Four examples of running the pipeline by selecting different training and testing ranges are included in the folder **"3_pipeline_examples"**. In particular, below will walk through the first example in the folder **"pipeline_example_1..."**.
+
+Inside the **"pipeline_example_1..."** folder, the file **"00_pipeline_example_1_terminal_output.txt"** is the first file to read. In the first part, it shows the answers to the question for this particular use of the pipeline. Corresponding to **Step 0**, all inputs to the pipeline are collected at the beginning. After the user enters all the inputs to the pipeline, the pipeline automatically goes through **Steps 1 to 5** in the pipeline. The second part of the terminal output shows some cues that were given to the user in the console as the pipeline is running. 
+
+Going back to other files that were generated during the execution of the pipeline. The files can be categorized as follows (in order in which they are generated in the pipeline):
+
+NOTE: n replications/runs = 2, system states = [0, 1], intervention = [0.5, 1.0] (corresponding to 50% consult LOS cut down, 0% consult LOS cut down/no intervention)
+
+1. **Actual LOS Data by Patient Type**
+    * _**LOS\_Dist\_Actual\_Patient\_Type=T123A.csv**_ contains all the LOS of the T123 admitted patients for n replications of simulation. 
+    * _**LOS\_Dist\_Actual\_Patient\_Type=T123NA.csv**_ contains all the LOS of the T123 not admitted patients for n replications of simulation. 
+    * _**LOS\_Dist\_Actual\_Patient\_Type=T45.csv**_ contains all the LOS of the T45 patients for n replications of simulation. 
+
+2. **Simulated LOS Data by System States**
+    In this pipeline example, 2 system states were selected (system state 0 and system state 1), therefore, 2 of these Excel files are created. Each of these Excel files contain 3 tabs, one for each patient type. 
+    * _**LOS\_Dist\_Simulated\_System\_State=0.xlsx**_ contains all the LOS of the 3 types of patients for n replications of simulation, LOS models were built using the system state 0 congestion representation feature. 
+    * _**LOS\_Dist\_Simulated\_System\_State=1.xlsx**_ contains all the LOS of the 3 types of patients for n replications of simulation, LOS models were built using the system state 1 congestion representation features. 
+
+3. _**00\_Naive+Simulation\_Results.xlsx**_, contains 3 tabs:
+    * "Naive" results (directly cutting down consult patients' LOS from data)
+    * "System\_State\_0" results
+    * "System\_State\_1" results
+
+    Each tab contains columns of: number of patients
+    (by patient type), number of consult patients (by patient type), % of consult (by patient type), consult LOS cut down percentage, expected mean (by patient type), expected median (by patient type), expected standard deviation (by patient type), and expected 90th percentile (by patient type). 
+
+4. _**00\_mean_median_90P\_results.xlsx**_
+    This file contains a cleaner view of expected mean, median, and 90th percentile results from previous file.
+
+5. **Histograms (Relative Frequency)**
+    *  _**Actual vs. Simulated LOS Relative Frequency (T123 Admitted).png**_
+    *  _**Actual vs. Simulated LOS Relative Frequency (T123 Not Admitted).png**_
+    *  _**Actual vs. Simulated LOS Relative Frequency (T45).png**_
+    
+    Each plot on the image overlays the relative frequency of LOS from simulated model onto that of LOS from actual data.
+
+6. _**00\_KS\_test\_results.xlsx**_, contains the two-sample K-S test (actual vs. simulated LOS distributions) results.
+
+7. **Q-Q Plots**
+    * _**Q-Q Plot (T123 Admitted).png**_
+    * _**Q-Q Plot (T123 Not Admitted).png**_
+    * _**Q-Q Plot (T45).png**_
+    
+    Produces Q-Q plots of actual LOS quantiles vs. simulated LOS quantiles.
+
+___
+In this example, we also included an example of plotting a clustered bar chart, where we used the code from the file **nygh\_plotting\_clustered\_bars\_final.py** in the folder **"2_other"**.
+* The file _**00\_clustered\_bar\_example.xlsx**_ contains some partial results from pipeline\_example\_1 outputs. When constructing clustered bar plots, the code reads in this Excel file and automatically produces and saves the clustered bar plot in the file _**Mean LOS values (T123 Admitted Patients).png**_. 
+___ 
+
 
 ## Limitations of Current Work
 * Service process of the system is a **"black-box"** process that starts from triage to leaving ED (lacked timestamps in between)
