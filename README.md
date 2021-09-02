@@ -1,4 +1,4 @@
-# Data-driven System Simulation for NYGH Emergency Department
+# Data-Driven System Simulation for NYGH Emergency Department
 
 **Repository author:** Sijia (Nancy) Li
 
