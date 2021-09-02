@@ -1,0 +1,211 @@
+/anaconda3/envs/simulation_tmle/bin/python /Users/lsjnancy/Desktop/Research/simulation_tmle/nygh_main_final.py
+Would you like to pre-process your data? 1 for yes, 0 for no --> 0
+Would you like to build LOS models (and simulate the system)? 1 for yes, 0 for no --> 1
+Would you like to create rel_freq histograms and qq-plots? 1 for yes, 0 for no --> 1
+
+Enter the filename of your CLEANED data in EXCEL format, for example: cleaned_data_all_final.xlsx --> cleaned_data_all_final.xlsx
+====================================================================================================
+Filename for cleaned data is: cleaned_data_all_final.xlsx
+====================================================================================================
+Is the above parameter correct? 1 for yes, 0 for no (If no, will reset and re-enter the information) --> 1
+
+STEP 2: Train and Test DataFrame Split Inputs...
+Enter the START (year, month) of training AND testing data, separated by comma, e.g., for May 2018, enter: 2018, 5 --> 2017, 1
+Enter the END (year, month) of training AND testing data, separated by comma, e.g., for August 2018, enter: 2018, 8 --> 2018,1
+Enter the START (year, month) of TRAINING data, separated by comma, e.g., for May 2018, enter: 2018, 5 --> 2017,1
+Enter the END (year, month) of TRAINING data, separated by comma, e.g., for July 2018, enter: 2018, 7 --> 2017,12
+Enter the START (year, month) of TESTING data, separated by comma, e.g., for August 2018, enter: 2018, 8 --> 2018,1
+Enter the END (year, month) of TESTING data, separated by comma, e.g., for August 2018, enter: 2018, 8 --> 2018,1
+====================================================================================================
+Range of all data (training and testing) -- start: 2017, 1; end: 2018,1
+Range of training data -- start: 2017,1; end: 2017,12
+Range of testing data -- start: 2018,1; end: 2018,1
+====================================================================================================
+Are the above parameters correct? 1 for yes, 0 for no (If no, will reset and re-enter the information) --> 1
+
+
+STEP 3: End-to-end Simulation Inputs...
+System state 0: overall NIS, 1: NIS by Patient Type, 2: NIS by Zone, 3: NIS by Patient Type x Zone
+Enter system state(s) you'd like to build LOS models and separate them by comma, for example: 0, 1 --> 0
+Provide CATEGORICAL column names from cleaned data (x features used to train LOS model)...
+For example: Age Category, Gender Code, Triage Category, Ambulance, Consult, Initial Zone, arrival_hour, arrival_day_of_week, arrival_week_number, arrival_month, holiday_CAN_ON
+How many column names you'd like to add? 1 for one column, 2 for more than one columns --> 2
+Enter column names separated by comma, for example: Age (Registration), Gender Code --> Age Category, Gender Code, Triage Category, Ambulance, Consult, Initial Zone, arrival_hour, arrival_day_of_week, arrival_week_number, arrival_month, holiday_CAN_ON
+Current columns selected:  ['Age Category', 'Gender Code', 'Triage Category', 'Ambulance', 'Consult', 'Initial Zone', 'arrival_hour', 'arrival_day_of_week', 'arrival_week_number', 'arrival_month', 'holiday_CAN_ON']
+Do you need to add more columns? Enter 0 for no, 1 for yes, 2 for reset --> 0
+
+Provide CONTINUOUS column names (except for system state features) from cleaned data (x features and y feature to train the LOS model)...
+For example: arrival_num_week_since_start, sojourn_time(minutes)
+How many column names you'd like to add? 1 for one column, 2 for more than one columns --> 2
+Enter column names separated by comma, for example: Age (Registration), Gender Code --> arrival_num_week_since_start, sojourn_time(minutes)
+Current columns selected:  ['arrival_num_week_since_start', 'sojourn_time(minutes)']
+Do you need to add more columns? Enter 0 for no, 1 for yes, 2 for reset --> 0
+
+Interventions (% LOS cutdown for consult patients)...
+Entering 1.0 means cut down by (1-1.0)*100% = 0% --> no intervention is applied
+Entering 0.6 means cut down by (1-0.6)*100% = 40% --> intervention is applied, LOS of consult patient will be reduced by 40%
+Enter interventions separated by comma, for example: 0.5, 1.0 --> 0.7, 1.0
+
+Do you want to take the log of LOS? 1 for yes, 0 for no --> 1
+Do you want to simulate the system? 1 for yes, 0 for no --> 1
+How many replications / runs would you like to simulate? For example, 30 --> 2
+Do you want to compute the simulation performance measures? 1 for yes, 0 for no --> 1
+====================================================================================================
+System states selected:  [0]
+Categorical variables columns:  ['Age Category', 'Gender Code', 'Triage Category', 'Ambulance', 'Consult', 'Initial Zone', 'arrival_hour', 'arrival_day_of_week', 'arrival_week_number', 'arrival_month', 'holiday_CAN_ON']
+Continuous variables columns:  ['arrival_num_week_since_start', 'sojourn_time(minutes)']
+Inverventions selected:  [0.7, 1.0]
+log(LOS) flag is: True, simulate flag is: True, performance measures flag is: True, number of simulation runs will be performed is: 2
+====================================================================================================
+Are the above parameters correct? 1 for yes, 0 for no (If no, will reset and re-enter the information) --> 1
+
+
+Enter system state(s) you'd like to create rel_freq histograms and qq-plots for, separated them by comma, for example: 0, 1 --> 0
+====================================================================================================
+System states to create plots for are: [0]
+====================================================================================================
+Is the above parameter correct? 1 for yes, 0 for no (If no, will reset and re-enter the information) --> 1
+
+
+EXECUTING STEP 1...
+Reading in data...
+
+
+EXECUTING STEP 2...
+Data from 2 different years...
+Data from the same year...
+Data from the same year...
+
+
+EXECUTING STEP 3...
+Getting x and y features with dummy variables for LOS model for T123 Admitted...
+Getting x_train, y_train, x_test, y_test split for T123 Admitted...
+x_train.shape, x_test.shape:  (13319, 110) (1217, 110)
+y_train.shape, y_test.shape:  (13319, 1) (1217, 1)
+Done: Getting x and y features with dummy variables for LOS model for T123 Admitted...
+Building LOS model for T123 Admitted...
+Done: Building LOS model for T123 Admitted...
+Getting x and y features with dummy variables for LOS model for T123 Not Admitted...
+Getting x_train, y_train, x_test, y_test split for T123 Not Admitted...
+x_train.shape, x_test.shape:  (75042, 110) (6872, 110)
+y_train.shape, y_test.shape:  (75042, 1) (6872, 1)
+Done: Getting x and y features with dummy variables for LOS model for T123 Not Admitted...
+Building LOS model for T123 Not Admitted...
+Done: Building LOS model for T123 Not Admitted...
+Getting x and y features with dummy variables for LOS model for T45...
+Getting x_train, y_train, x_test, y_test split for T45...
+x_train.shape, x_test.shape:  (23061, 110) (1837, 110)
+y_train.shape, y_test.shape:  (23061, 1) (1837, 1)
+Done: Getting x and y features with dummy variables for LOS model for T45...
+Building LOS model for T45...
+Done: Building LOS model for T45...
+
+Simulation start...
+Consult Patients shorten by 30.000000000000004 Percent, System State = 0, Total Runs = 2...
+
+Running simulation run #: 1
+arrival:  0
+arrival:  1000
+arrival:  2000
+arrival:  3000
+arrival:  4000
+arrival:  5000
+arrival:  6000
+arrival:  7000
+arrival:  8000
+arrival:  9000
+
+Running simulation run #: 2
+arrival:  0
+arrival:  1000
+arrival:  2000
+arrival:  3000
+arrival:  4000
+arrival:  5000
+arrival:  6000
+arrival:  7000
+arrival:  8000
+arrival:  9000
+Total time to run simulation for this cutdown percentage (2 runs): 418.594 seconds
+Consult Patients shorten by 0.0 Percent, System State = 0, Total Runs = 2...
+
+Running simulation run #: 1
+arrival:  0
+arrival:  1000
+arrival:  2000
+arrival:  3000
+arrival:  4000
+arrival:  5000
+arrival:  6000
+arrival:  7000
+arrival:  8000
+arrival:  9000
+
+Running simulation run #: 2
+arrival:  0
+arrival:  1000
+arrival:  2000
+arrival:  3000
+arrival:  4000
+arrival:  5000
+arrival:  6000
+arrival:  7000
+arrival:  8000
+arrival:  9000
+Calculating Simulated LOS...
+Total time to run simulation for this cutdown percentage (2 runs): 439.967 seconds
+
+Naive interventions on actual patient LOS data...
+Consult Patients shorten by 30.000000000000004 Percent
+Consult Patients shorten by 0.0 Percent
+Saving results...
+['System State', 'nPatients [T123A, T123NA, T45]', 'nConsultPatients [T123A, T123NA, T45]', 'percentConsult [T123A, T123NA, T45]', 'nRuns', 'Cut Down by (%)', 'RMSE [T123A, T123NA, T45]', 'Mean [T123A, T123NA, T45]', 'Median [T123A, T123NA, T45]', 'Stdev [T123A, T123NA, T45]', 'CI on Mean [T123A, T123NA, T45]', '90th Percentile [T123A, T123NA, T45]', 'Time to Run (seconds)']
+[[0 list([1217, 6872, 1837]) list([1136, 340, 32]) list([93.3, 4.9, 1.7])
+  2 30.000000000000004 list([258.72, 146.9, 83.29])
+  list([440.24, 202.85, 118.45]) list([399.12, 167.82, 100.12])
+  list([2.28, 3.93, 0.29])
+  list([(437.08, 443.4), (197.4, 208.3), (118.05, 118.85)])
+  list([776.28, 375.44, 206.26]) 418.594]
+ [0 list([1217, 6872, 1837]) list([1136, 340, 32]) list([93.3, 4.9, 1.7])
+  2 0.0 list([356.73, 166.4, 93.52]) list([618.08, 217.9, 125.51])
+  list([562.26, 177.9, 105.08]) list([1.26, 4.54, 0.86])
+  list([(616.33, 619.83), (211.61, 224.19), (124.32, 126.7)])
+  list([1091.45, 401.62, 216.54]) 439.967]]
+
+
+EXECUTING STEP 4...
+Transforming naive + simulation results...
+mean_with_stderr
+median
+90th_percentile
+
+
+EXECUTING STEP 5...
+Processing actual LOS files...
+LOS_Dist_Actual_Patient_Type=T123A.csv
+LOS_Dist_Actual_Patient_Type=T123NA.csv
+LOS_Dist_Actual_Patient_Type=T45.csv
+
+Processing simulated LOS for T123 Admitted...
+LOS_Data_Simulated_System_State=0.xlsx T123A
+Plotting simulated LOS distribution(s) and conducting Kolmogorov–Smirnov test(s) for T123 Admitted...
+Kolmogorov–Smirnov test (Simulated: General NIS):  
+ks stat=0.11133935907970419, ks crit val=0.04774624792203785, ks pval=3.452632624245666e-09
+Plotting Q-Q plot(s) for T123 Admitted...
+
+Processing simulated LOS for T123 Not Admitted...
+LOS_Data_Simulated_System_State=0.xlsx T123NA
+Plotting simulated LOS distribution(s) and conducting Kolmogorov–Smirnov test(s) for T123 Not Admitted...
+Kolmogorov–Smirnov test (Simulated: General NIS):  
+ks stat=0.1063736903376018, ks crit val=0.020092915715059365, ks pval=1.3630873188072372e-45
+Plotting Q-Q plot(s) for T123 Not Admitted...
+
+Processing simulated LOS for T45...
+LOS_Data_Simulated_System_State=0.xlsx T45
+Plotting simulated LOS distribution(s) and conducting Kolmogorov–Smirnov test(s) for T45...
+Kolmogorov–Smirnov test (Simulated: General NIS):  
+ks stat=0.15242242787152968, ks crit val=0.038862430622406116, ks pval=4.107825191113079e-15
+Plotting Q-Q plot(s) for T45...
+Saving KS-test results...
+
+Process finished with exit code 0
