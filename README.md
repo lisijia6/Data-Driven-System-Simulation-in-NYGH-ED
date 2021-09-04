@@ -43,6 +43,7 @@ The automated data-drive pipeline is implemented in Python. The code for the pip
 * **nygh_histogram_qqplots_kstest_final.py**
 
 _**nygh_main_final.py**_ is the first file to read, as it is the file to use for running the pipeline. It is the main interface for asking the user to enter user specifications. It also ties together the other 4 Python files in the folder to complete the overall pipeline. In particular, the high-level steps that this file goes through are the following:
+
 0. Asks for user inputs
 1. Reads in data (1a: raw data to pre-process and read, OR 1b: cleaned data to read)
 2. Splits data into training and testing sets
