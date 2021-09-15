@@ -36,11 +36,11 @@ The data used for this project is from North York General Hospital (NYGH) ED and
 
 ## 2.0 Pipeline
 The automated data-drive pipeline is implemented in Python. The code for the pipeline can be found in the folder **"1_pipeline"**. The folder contains 5 Python files:
-* **nygh_main_final.py**
-* **nygh_pre_process_final.py**
-* **nygh_simulation_final.py**
-* **nygh_transform_results_final.py**
-* **nygh_histogram_qqplots_kstest_final.py**
+* [**nygh_main_final.py**](https://github.com/lisijia6/Data-Driven_System_Simulation_in_NYGH_ED/blob/main/1_pipeline/nygh_main_final.py)
+* [**nygh_pre_process_final.py**](https://github.com/lisijia6/Data-Driven_System_Simulation_in_NYGH_ED/blob/main/1_pipeline/nygh_pre_process_final.py)
+* [**nygh_simulation_final.py**](https://github.com/lisijia6/Data-Driven_System_Simulation_in_NYGH_ED/blob/main/1_pipeline/nygh_simulation_final.py)
+* [**nygh_transform_results_final.py**](https://github.com/lisijia6/Data-Driven_System_Simulation_in_NYGH_ED/blob/main/1_pipeline/nygh_transform_results_final.py)
+* [**nygh_histogram_qqplots_kstest_final.py**](https://github.com/lisijia6/Data-Driven_System_Simulation_in_NYGH_ED/blob/main/1_pipeline/nygh_histogram_qqplots_kstest_final.py)
 
 _**nygh_main_final.py**_ is the first file to read, as it is the file to use for running the pipeline. It is the main interface for asking the user to enter user specifications. It also ties together the other 4 Python files in the folder to complete the overall pipeline. In particular, the high-level steps that this file goes through are the following:
 
@@ -77,7 +77,7 @@ In Step 0, the "nygh_main" file collects inputs for Steps 1 to 5.
 
 ## 3.0 Other Useful Code
 * The folder **"2_other"** contains some code that are not part of the pipeline, but related to the work. 
-    * **nygh\_plotting\_clustered\_bars\_final.py** can be modified to read in data and create clustered bar charts
+    * [**nygh\_plotting\_clustered\_bars\_final.py**](https://github.com/lisijia6/Data-Driven_System_Simulation_in_NYGH_ED/blob/main/2_other/nygh_plotting_clustered_bars_final.py) can be modified to read in data and create clustered bar charts
 * The folder **4_synthetic_data_simulators** contains some code for "M/M/1 experiment" (further work required). The folder also contains some code for generating synthetic data from simulators for:
     *  1) **First Come First Served Queues** -- initial code for this simulator's code was developed by [Arik Senderovich](https://github.com/ArikSenderovich1983/simulation_tmle/tree/master)
     *  2) **Priority Queues**
@@ -85,7 +85,7 @@ In Step 0, the "nygh_main" file collects inputs for Steps 1 to 5.
 
 
 ## 4.0 Examples of Using the Pipeline
-Four examples of running the pipeline by selecting different training and testing ranges are included in the folder **"3_pipeline_examples"**. In particular, below will walk through the first example in the folder **"pipeline_example_1..."**.
+Four examples of running the pipeline by selecting different training and testing ranges are included in the folder **"3_pipeline_examples"**. In particular, below will walk through the first example in the folder [**"pipeline_example_1..."**](https://github.com/lisijia6/Data-Driven_System_Simulation_in_NYGH_ED/tree/main/3_pipeline_examples/pipeline_example_1%20%20--%20train_2018May-Jul%20--%20test_2018Aug-Aug).
 
 Inside the **"pipeline_example_1..."** folder, the file **"00_pipeline_example_1_terminal_output.txt"** is the first file to read. In the first part, it shows the answers to the question for this particular use of the pipeline. Corresponding to **Step 0**, all inputs to the pipeline are collected at the beginning. After the user enters all the inputs to the pipeline, the pipeline automatically goes through **Steps 1 to 5** in the pipeline. The second part of the terminal output shows some cues that were given to the user in the console as the pipeline is running. 
 
