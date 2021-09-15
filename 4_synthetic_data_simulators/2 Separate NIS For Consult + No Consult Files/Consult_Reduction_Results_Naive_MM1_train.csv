@@ -1,0 +1,3 @@
+nPatients,nConsultPatients,percentConsult,Cut Down by (%),Mean,Median,Stdev,90th Percentile
+10000.0,961.0,9.6,50.0,15.76,11.71,13.4,35.4
+10000.0,961.0,9.6,0.0,16.57,12.71,13.68,36.8
