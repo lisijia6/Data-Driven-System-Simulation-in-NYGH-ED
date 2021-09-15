@@ -79,9 +79,9 @@ In Step 0, the "nygh_main" file collects inputs for Steps 1 to 5.
 * The folder **"2_other"** contains some code that are not part of the pipeline, but related to the work. 
     * **nygh\_plotting\_clustered\_bars\_final.py** can be modified to read in data and create clustered bar charts
 * The folder **4_synthetic_data_simulators** contains some code for "M/M/1 experiment" (further work required). The folder also contains some code for generating synthetic data from simulators for:
-    *  1) **First Come First Served Queues** -- initial code for this simulator's code was developed by <https://github.com/ArikSenderovich1983/simulation_tmle/tree/master>
+    *  1) **First Come First Served Queues** -- initial code for this simulator's code was developed by [Arik Senderovich](https://github.com/ArikSenderovich1983/simulation_tmle/tree/master)
     *  2) **Priority Queues**
-    *  For more information, refer to **README_for_MM1_Experiment.md** in the **4_synthetic_data_simulators** folder as well as **README_for_simulators** in the **4_synthetic_data_simulators/0 Simulators** folder.
+    *  For more information, refer to [**README_for_MM1_Experiment.md**](https://github.com/lisijia6/Data-Driven_System_Simulation_in_NYGH_ED/blob/main/4_synthetic_data_simulators/README_for_MM1_Experiment.md) in the **4_synthetic_data_simulators** folder as well as [**README_for_simulators**](https://github.com/lisijia6/Data-Driven_System_Simulation_in_NYGH_ED/blob/main/4_synthetic_data_simulators/0%20Simulators/README_for_simulators.md) in the **4_synthetic_data_simulators/0 Simulators** folder.
 
 
 ## 4.0 Examples of Using the Pipeline
