@@ -27,7 +27,7 @@
 
 ## 2.0 Plotting
 #### [plot_workload.py](https://github.com/lisijia6/Data-Driven_System_Simulation_in_NYGH_ED/blob/main/4_synthetic_data_simulators/0%20Simulators/plot_workload.py) and [resource.py](https://github.com/lisijia6/Data-Driven_System_Simulation_in_NYGH_ED/blob/main/4_synthetic_data_simulators/0%20Simulators/resource.py)
-* Original developer: [Arik Senderovich](https://github.com/ArikSenderovich1983/simulation_tmle/tree/master)
+* Entirely from original developer: [Arik Senderovich](https://github.com/ArikSenderovich1983/simulation_tmle/tree/master)
 
 #### [plotting.py](https://github.com/lisijia6/Data-Driven_System_Simulation_in_NYGH_ED/blob/main/4_synthetic_data_simulators/0%20Simulators/plotting.py)
 * **SIMULATION (FCFS & Non-preemptive Priority)**
