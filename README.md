@@ -2,7 +2,7 @@
 
 **Repository author:** Sijia (Nancy) Li
 
-**Supervised by:** Prof. Arik Senderovich, Prof. Opher Baron, and Prof. Dmitry Krass
+<!-- **Supervised by:** Prof. Arik Senderovich, Prof. Opher Baron, and Prof. Dmitry Krass -->
 
 
 **Table of Contents**
